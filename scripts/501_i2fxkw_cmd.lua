@@ -19,7 +19,7 @@ _G.i2fxkw_cmd = {
         end
 
         for c, info in utils.pairsByKeys(sorted) do
-            logger:i("> i2fxkw_cmd." .. c .. " [#64B5F6](" .. info.args .. ")[]\n  [#8BC34A]" .. info.descr .. "[]")
+            logger:i("> i2fxkw_cmd." .. c .. "[#64B5F6](" .. info.args .. ")\n  [#8BC34A]" .. info.descr)
         end
     end,
 }

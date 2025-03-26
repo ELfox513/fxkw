@@ -26619,7 +26619,21 @@
      +m:startNewUserLevel:UserMap,SelectedAbilitiesConfiguration
      +m:startRandomSecretLevel:
     }
-    -c:ScriptManager
+    >c:ScriptManager{
+     -c:Serializer
+     -x:
+     -f:CLASS_ALIASES_FILE_PATH
+     -f:WHITELIST_FILE_PATH
+     -f:global
+     -f:math
+     -m:getPackagesToScanFromConfig:
+     -m:fillGlobalsWithClassDefinitions:Globals
+     -m:getGlobalCTable:
+     -m:getLuaPackageDefinitions:
+     -m:getWhitelist:
+     -m:restoreClassTreePath:String,ClassTreeLuaTable
+     +m:setup:
+    }
     -c:SecretCodeManager
     >c:SettingsManager{
      >c:SettingsManagerListener{
@@ -38204,7 +38218,7 @@
     +f:researchManager
     +f:resourceManager
     +f:screenManager
-    -f:scriptManager
+    +f:scriptManager
     -f:secretCodeManager
     +f:settingsManager
     +f:shapeManager

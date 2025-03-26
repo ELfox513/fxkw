@@ -23,3 +23,4 @@ This mod is **fully compatible** with **R.1.9.2 (build 208) for PC**. Compatibil
 Compatibility with other mods is also not guaranteed. But you can try to resolve possible compatibility conflicts described below to be able to run this mod with others
 * Lua Whitelist changed in `res/luaj/whitelist.txt` file. Access to some closed parts of the game is necessary for the correct work of the mod
 * The mod adds a `i2fxkw` stage, which is why the `res/basic-level-stages.json` file is changed
+* The script order range from `500_*.lua` to `599_*.lua` is reserved in all scripts folders

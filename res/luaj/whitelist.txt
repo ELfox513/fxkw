@@ -5799,7 +5799,95 @@
      +m:stop:long
     }
    }
-   -p:backends
+   >p:backends{
+    -p:headless
+    >p:lwjgl3{
+     -p:audio
+     -c:Lwjgl3ApplicationBase
+     -c:Lwjgl3Input
+     -c:Lwjgl3WindowListener
+     -c:DefaultLwjgl3Input
+     -c:Lwjgl3Application
+     -c:Lwjgl3ApplicationConfiguration
+     -c:Lwjgl3ApplicationLogger
+     -c:Lwjgl3Clipboard
+     -c:Lwjgl3Cursor
+     -c:Lwjgl3FileHandle
+     -c:Lwjgl3Files
+     -c:Lwjgl3GL31
+     -c:Lwjgl3GL32
+     >c:Lwjgl3Graphics{
+      -c:Lwjgl3DisplayMode
+      -c:Lwjgl3Monitor
+      -x:Lwjgl3Window
+      -m:dispose:
+      -m:enableCubeMapSeamless:boolean
+      -m:getBackBufferHeight:
+      -m:getBackBufferWidth:
+      -m:getBufferFormat:
+      -m:getDeltaTime:
+      -m:getDisplayMode:
+      -m:getDisplayMode:Monitor
+      -m:getDisplayModes:
+      -m:getDisplayModes:Monitor
+      -m:getFrameId:
+      -m:getFramesPerSecond:
+      -m:getGL20:
+      -m:getGL30:
+      -m:getGL31:
+      -m:getGL32:
+      -m:getGLVersion:
+      -m:getHeight:
+      -m:getLogicalHeight:
+      -m:getLogicalWidth:
+      -m:getMonitor:
+      -m:getMonitors:
+      -m:getPpcX:
+      -m:getPpcY:
+      -m:getPpiX:
+      -m:getPpiY:
+      -m:getPrimaryMonitor:
+      -m:getSafeInsetBottom:
+      -m:getSafeInsetLeft:
+      -m:getSafeInsetRight:
+      -m:getSafeInsetTop:
+      -m:getType:
+      -m:getWidth:
+      -m:getWindow:
+      -m:isContinuousRendering:
+      -m:isFullscreen:
+      -m:isGL30Available:
+      -m:isGL31Available:
+      -m:isGL32Available:
+      -m:newCursor:Pixmap,int,int
+      -m:requestRendering:
+      -m:resetDeltaTime:
+      -m:setContinuousRendering:boolean
+      -m:setCursor:Cursor
+      -m:setForegroundFPS:int
+      -m:setFullscreenMode:DisplayMode
+      -m:setGL20:GL20
+      -m:setGL30:GL30
+      -m:setGL31:GL31
+      -m:setGL32:GL32
+      -m:setResizable:boolean
+      -m:setSystemCursor:SystemCursor
+      +m:setTitle:String
+      -m:setUndecorated:boolean
+      -m:setVSync:boolean
+      -m:setWindowedMode:int,int
+      -m:supportsCubeMapSeamless:
+      -m:supportsDisplayModeChange:
+      -m:supportsExtension:String
+     }
+     -c:Lwjgl3NativesLoader
+     -c:Lwjgl3Net
+     -c:Lwjgl3Preferences
+     -c:Lwjgl3Window
+     -c:Lwjgl3WindowAdapter
+     -c:Lwjgl3WindowConfiguration
+    }
+   }
    >p:controllers{
     -p:desktop
     >c:Controller{
@@ -6331,7 +6419,6 @@
       -m:preAllocateParticles:
       +m:reset:
       +m:reset:boolean
-      +m:reset:boolean,boolean
       +m:save:Writer
       +m:scaleEffect:float
       +m:scaleEffect:float,float
@@ -6480,7 +6567,6 @@
       +m:draw:Batch,float
       +m:flipY:
       +m:getActiveCount:
-      +m:getAllowCompletion:
       +m:getAngle:
       +m:getBoundingBox:
       +m:getDelay:
@@ -6524,7 +6610,6 @@
       +m:matchYSize:ParticleEmitter
       +m:preAllocateParticles:
       +m:reset:
-      +m:reset:boolean
       +m:save:Writer
       +m:scaleMotion:float
       +m:scaleSize:float
@@ -6564,15 +6649,6 @@
        +m:getRects:
        +m:getTexture:
        +m:updateTexture:TextureFilter,TextureFilter,boolean
-      }
-      >c:PixmapPackerRectangle{
-       +f:offsetX
-       +f:offsetY
-       +f:originalHeight
-       +f:originalWidth
-       +f:pads
-       +f:page
-       +f:splits
       }
       >c:SkylineStrategy{
        +x:
@@ -6733,7 +6809,6 @@
       +m:getHeight:
       +m:getOriginX:
       +m:getOriginY:
-      +m:getPackedColor:
       +m:getRotation:
       +m:getScaleX:
       +m:getScaleY:
@@ -6911,7 +6986,6 @@
         +f:height
         +f:magFilter
         +f:minFilter
-        +f:name
         +f:pma
         +f:texture
         -f:textureFile
@@ -9706,17 +9780,14 @@
      >c:GLFrameBuffer{
       >c:FloatFrameBufferBuilder{
        +x:int,int
-       +x:int,int,int
        +m:build:
       }
       >c:FrameBufferBuilder{
        +x:int,int
-       +x:int,int,int
        +m:build:
       }
       >c:FrameBufferCubemapBuilder{
        +x:int,int
-       +x:int,int,int
        +m:build:
       }
       >c:GLFrameBufferBuilder{
@@ -9724,7 +9795,6 @@
        +m:addBasicDepthRenderBuffer:
        +m:addBasicStencilDepthPackedRenderBuffer:
        +m:addBasicStencilRenderBuffer:
-       +m:addColorRenderBuffer:int
        +m:addColorTextureAttachment:int,int,int
        +m:addDepthRenderBuffer:int
        +m:addDepthTextureAttachment:int,int
@@ -9744,7 +9814,6 @@
       +m:dispose:
       +m:end:
       +m:end:int,int,int,int
-      +m:getColorBufferHandle:int
       +m:getColorBufferTexture:
       +m:getDepthBufferHandle:
       +m:getFramebufferHandle:
@@ -9752,8 +9821,6 @@
       +m:getStencilBufferHandle:
       +m:getTextureAttachments:
       +m:getWidth:
-      +m:transfer:GLFrameBuffer
-      +m:transfer:GLFrameBuffer,int
      }
      >c:GLOnlyTextureData{
       +x:int,int,int,int,int,int
@@ -9786,7 +9853,6 @@
       +m:getRendererString:
       +m:getType:
       +m:getVendorString:
-      +m:getVersionString:
       +m:isVersionEqualToOrHigher:int,int
      }
      >c:HdpiMode{
@@ -12230,7 +12296,6 @@
      +f:BROWN
      +f:CHARTREUSE
      +f:CLEAR
-     +f:CLEAR_WHITE
      +f:CORAL
      +f:CYAN
      +f:DARK_GRAY
@@ -12304,7 +12369,6 @@
      +m:mul:float,float,float,float
      +m:premultiplyAlpha:
      +m:set:Color
-     +m:set:Color,float
      +m:set:float,float,float,float
      +m:set:int
      +m:sub:Color
@@ -12699,15 +12763,6 @@
     }
    }
    >p:input{
-    >c:TextInputWrapper{
-     +z
-     +m:getSelectionEnd:
-     +m:getSelectionStart:
-     +m:getText:
-     +m:setPosition:int
-     +m:setText:String
-     +m:shouldClose:
-    }
     >c:GestureDetector{
      >c:GestureListener{
       +z
@@ -12754,28 +12809,6 @@
      +m:touchDragged:int,int,int
      +m:touchUp:float,float,int,int
      +m:touchUp:int,int,int,int
-    }
-    >c:NativeInputConfiguration{
-     +x:
-     +m:getAutoComplete:
-     +m:getMaxLength:
-     +m:getPlaceholder:
-     +m:getTextInputWrapper:
-     +m:getType:
-     +m:getValidator:
-     +m:isMultiLine:
-     +m:isPreventCorrection:
-     +m:isShowPasswordButton:
-     +m:setAutoComplete:String[]
-     +m:setMaxLength:Integer
-     +m:setMultiLine:boolean
-     +m:setPlaceholder:String
-     +m:setPreventCorrection:boolean
-     +m:setShowPasswordButton:boolean
-     +m:setTextInputWrapper:TextInputWrapper
-     +m:setType:OnscreenKeyboardType
-     +m:setValidator:InputStringValidator
-     +m:validate:
     }
     -c:RemoteInput
     -c:RemoteSender
@@ -14098,8 +14131,6 @@
      +f:Zero
      +f:x
      +f:y
-     +m:angleDeg:float,float
-     +m:angleRad:float,float
      +m:dot:float,float,float,float
      +m:dst2:float,float,float,float
      +m:dst:float,float,float,float
@@ -14601,23 +14632,6 @@
      +m:isRight:int
      +m:isTop:int
      +m:toString:int
-    }
-    >c:Architecture{
-     >c:Bitness{
-      +f:_128
-      +f:_32
-      +f:_64
-      +m:valueOf:String
-      +m:values:
-      +m:toSuffix:
-     }
-     +f:ARM
-     +f:LOONGARCH
-     +f:RISCV
-     +f:x86
-     +m:valueOf:String
-     +m:values:
-     +m:toSuffix:
     }
     >c:Array{
      >c:ArrayIterable{
@@ -15539,26 +15553,6 @@
      +m:parse:char[],int,int
      +m:stop:
     }
-    -c:JsonSkimmer
-    >c:JsonString{
-     +x:
-     +m:array:
-     +m:array:String
-     +m:close:
-     +m:getBuffer:
-     +m:json:String
-     +m:json:String,String
-     +m:name:String
-     +m:object:
-     +m:object:String
-     +m:pop:
-     +m:reset:
-     +m:set:String,Object
-     +m:setOutputType:OutputType
-     +m:setQuoteLongValues:boolean
-     +m:toString:
-     +m:value:Object
-    }
     >c:JsonValue{
      >c:JsonIterator{
       +m:hasNext:
@@ -16264,18 +16258,6 @@
      +m:toString:
      +m:toString:String
     }
-    >c:Os{
-     +f:Android
-     +f:IOS
-     +f:Linux
-     +f:MacOsX
-     +f:Windows
-     +m:valueOf:String
-     +m:values:
-     +m:getJniPlatform:
-     +m:getLibExtension:
-     +m:getLibPrefix:
-    }
     -c:PauseableThread
     >c:PerformanceCounter{
      +x:String
@@ -16429,7 +16411,6 @@
      +m:clear:Color,boolean
      +m:clear:float,float,float,float
      +m:clear:float,float,float,float,boolean
-     +m:clear:float,float,float,float,boolean,boolean
      +m:getFrameBufferPixels:boolean
      +m:getFrameBufferPixels:int,int,int,int,boolean
      +m:getFrameBufferTexture:
@@ -16970,14 +16951,6 @@
     +m:supportsExtension:String
    }
    >c:Input{
-    >c:InputStringValidator{
-     +z
-     +m:validate:String
-    }
-    >c:KeyboardHeightObserver{
-     +z
-     +m:onKeyboardHeightChanged:int
-    }
     >c:TextInputListener{
      +z
      +m:canceled:
@@ -17217,7 +17190,6 @@
      +m:values:
     }
     +z
-    +m:closeTextInputField:boolean
     +m:getAccelerometerX:
     +m:getAccelerometerY:
     +m:getAccelerometerZ:
@@ -17255,12 +17227,10 @@
     +m:isTouched:
     +m:isTouched:int
     +m:justTouched:
-    +m:openTextInputField:NativeInputConfiguration
     +m:setCatchKey:int,boolean
     +m:setCursorCatched:boolean
     +m:setCursorPosition:int,int
     +m:setInputProcessor:InputProcessor
-    +m:setKeyboardHeightObserver:KeyboardHeightObserver
     +m:setOnscreenKeyboardVisible:boolean
     +m:setOnscreenKeyboardVisible:boolean,OnscreenKeyboardType
     +m:vibrate:VibrationType
@@ -17413,7 +17383,6 @@
  -p:crashinvaders
  >p:esotericsoftware{
   -p:asm
-  -p:jsonbeans
   >p:kryo{
    >p:io{
     >c:ByteBufferInput{
@@ -17896,12 +17865,8 @@
   -p:minlog
   -p:reflectasm
  }
- -p:fasterxml
  >p:google{
   -p:common
-  -p:errorprone
-  -p:j2objc
-  -p:thirdparty
  }
  >p:prineside{
   >p:kryo{
@@ -26535,7 +26500,6 @@
       +x:
       +f:sprite
       +f:visibleWith
-      -m:fromJson:JsonParser
      }
      -c:Serializer
      >c:StartResearchFailReason{
@@ -36662,7 +36626,6 @@
      +m:floatIsInt:float
      +m:fromByteArray:byte[]
      +m:fromBytes:FixedInput
-     -m:fromJson:ArrayNode,AssetProvider
      +m:fromJson:JsonValue
      +m:fromString:String
      +m:getNoQuad:
@@ -36745,7 +36708,6 @@
      }
      >c:FourCornerColors{
       +x:Color,Color,Color,Color
-      -m:of:JsonNode
       +m:of:JsonValue
       +m:cpyCornerColors:
       +m:get:int
@@ -36777,7 +36739,6 @@
      +f:quadName
      +f:regionName
      +m:fromBytes:FixedInput
-     -m:fromJson:JsonNode,AssetProvider
      +m:fromJson:JsonValue
      +m:draw:Batch,float,float,float,float
      +m:draw:Batch,float,float,float,float,float,float,float,float,float
@@ -39007,7 +38968,6 @@
     +f:statisticsType
     +f:statisticsValue
     +f:type
-    -m:fromJson:JsonParser
     +m:fromJson:JsonValue
     +m:getFormattedValue:
     +m:getIconTextureName:
@@ -39033,7 +38993,6 @@
      +f:price
      +f:requirements
      +f:researchDuration
-     -m:fromJson:JsonParser
     }
     >c:ResearchLink{
      +x:Research,Research,int,int,int,float
@@ -39045,7 +39004,6 @@
      +f:requiredLevelsLabelPos
      +f:requiredLevelsLabelX
      +f:requiredLevelsLabelY
-     -m:fromJson:JsonParser
      +m:isVisible:
     }
     +x:ResearchType,ResearchCategory,ResearchLevel[],int
@@ -39073,7 +39031,6 @@
     +f:unlocksTower
     +f:x
     +f:y
-    -m:fromJson:JsonParser
     +m:getCumulativePrice:int,int,boolean
     +m:getDescription:
     +m:getEffects:int
@@ -39095,7 +39052,6 @@
     +f:alias
     +f:descriptionAlias
     +f:titleAlias
-    -m:fromJson:JsonParser
     +m:getDescription:
     +m:getIcon:
     +m:getIconString:
@@ -39119,7 +39075,6 @@
     +f:fontResolution
     +f:name
     +f:version
-    -m:preloadQuadRegionSetRecursive:JsonNode,String,String,ObjectMap,AssetProvider
     -m:dispose:
     +m:getBlankWhiteTextureRegion:
     +m:getColor:String
@@ -39604,7 +39559,4 @@
 }
 >p:net{
  -p:bytebuddy
-}
->p:org{
- -p:objenesis
 }

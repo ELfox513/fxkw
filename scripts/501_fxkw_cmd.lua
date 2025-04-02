@@ -1,6 +1,6 @@
-local logger = C.TLog:forTag("i2fxkw_cmd.lua")
+local logger = C.TLog:forTag("fxkw_cmd.lua")
 
-_G.i2fxkw_cmd = {
+_G.fxkw_cmd = {
     help = function(a1)
         if (a1 == "?") then
             return {
@@ -9,7 +9,7 @@ _G.i2fxkw_cmd = {
         end
 
         local sorted = {}
-        for k, v in pairs(_G.i2fxkw_cmd) do
+        for k, v in pairs(_G.fxkw_cmd) do
             local info = v("?")
             local cmdArgs = info and info.args or nil
             local cmdDescr = info and info.descr or nil
@@ -19,7 +19,9 @@ _G.i2fxkw_cmd = {
         end
 
         for c, info in utils.pairsByKeys(sorted) do
-            logger:i("> i2fxkw_cmd." .. c .. "[#64B5F6](" .. info.args .. ")\n  [#8BC34A]" .. info.descr)
+            logger:i("> fxkw_cmd." .. c .. "[#64B5F6](" .. info.args .. ")\n  [#8BC34A]" .. info.descr)
         end
     end,
 }
+
+logger:i("Done")

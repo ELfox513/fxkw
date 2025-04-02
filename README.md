@@ -18,7 +18,7 @@ The following projects are in mod, current and archival
 
 ## Compatibility
 ###### Vanilla
-This mod is **fully compatible** with **R.1.9.2 (build 208) for PC**. Compatibility with _previous and future versions_ of the game is _not guaranteed_
+This mod is **fully compatible** with **R.1.9.2 (build 208) for PC**. Compatibility with _previous and future versions_ of the game and with _other platforms_ is _not guaranteed_
 ###### Other mods and maps
 Compatibility with other mods is also not guaranteed. But you can try to resolve possible compatibility conflicts described below to be able to run this mod with others
 * Lua Whitelist changed in `res/luaj/whitelist.txt` file. Access to some closed parts of the game is necessary for the correct work of the mod

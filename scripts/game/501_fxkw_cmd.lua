@@ -1,6 +1,6 @@
-local logger = C.TLog:forTag("game/i2fxkw_cmd.lua")
+local logger = C.TLog:forTag("game/fxkw_cmd.lua")
 
-i2fxkw_cmd.reload_scriptSystem = function(a1)
+fxkw_cmd.reload_scriptSystem = function(a1)
     if (a1 == "?") then
         return {
             descr = "Reboot ScriptSystem. Also reloads scriptEnvironment"
@@ -9,3 +9,5 @@ i2fxkw_cmd.reload_scriptSystem = function(a1)
 
     S.script:setup()
 end
+
+logger:i("Done")

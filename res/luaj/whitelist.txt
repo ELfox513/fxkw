@@ -6000,64 +6000,7 @@
      +m:removeListener:ControllerListener
     }
    }
-   >p:files{
-    >c:FileHandle{
-     -x:File
-     +x:String
-     -m:tempDirectory:String
-     -m:tempFile:String
-     -m:child:String
-     -m:copyTo:FileHandle
-     -m:delete:
-     -m:deleteDirectory:
-     -m:emptyDirectory:
-     -m:emptyDirectory:boolean
-     -m:equals:Object
-     -m:exists:
-     -m:extension:
-     -m:file:
-     -m:hashCode:
-     -m:isDirectory:
-     -m:lastModified:
-     -m:length:
-     +m:list:
-     -m:list:FileFilter
-     -m:list:FilenameFilter
-     -m:list:String
-     -m:map:
-     -m:map:MapMode
-     -m:mkdirs:
-     -m:moveTo:FileHandle
-     -m:name:
-     -m:nameWithoutExtension:
-     -m:parent:
-     +m:path:
-     -m:pathWithoutExtension:
-     -m:read:
-     -m:read:int
-     -m:readBytes:
-     -m:readBytes:byte[],int,int
-     -m:readString:
-     -m:readString:String
-     -m:reader:
-     -m:reader:String
-     -m:reader:int
-     -m:reader:int,String
-     -m:sibling:String
-     -m:toString:
-     -m:type:
-     -m:write:InputStream,boolean
-     -m:write:boolean
-     -m:write:boolean,int
-     -m:writeBytes:byte[],boolean
-     -m:writeBytes:byte[],int,int,boolean
-     -m:writeString:String,boolean
-     -m:writeString:String,boolean,String
-     -m:writer:boolean
-     -m:writer:boolean,String
-    }
-    -c:FileHandleStream
-   }
+   -p:files
    >p:graphics{
     >p:g2d{
      >c:Batch{
@@ -25243,7 +25186,21 @@
       +m:prepare:String
      }
      -c:ReadOnlyLuaTable
-     -c:ScriptEnvironment
+     >c:ScriptEnvironment{
+      -c:LuaExecutionResult
+      -c:Suggestion
+      -x:
+      -m:handleLuaError:LuaError
+      -m:dispose:
+      -m:executeLua:String,String
+      -m:getAutocompletion:String,int
+      -m:getGlobals:
+      -m:initialize:
+      -m:loadScript:FileHandle
+      +m:loadScriptsInDir:String
+      -m:read:Kryo,Input
+      -m:write:Kryo,Output
+     }
      -c:Whitelist
     }
     >c:AbilityManager{
@@ -26681,7 +26638,7 @@
      -x:
      -f:CLASS_ALIASES_FILE_PATH
      -f:WHITELIST_FILE_PATH
-     -f:global
+     +f:global
      -f:math
      -m:getPackagesToScanFromConfig:
      -m:fillGlobalsWithClassDefinitions:Globals
@@ -26689,7 +26646,7 @@
      -m:getLuaPackageDefinitions:
      -m:getWhitelist:
      -m:restoreClassTreePath:String,ClassTreeLuaTable
-     +m:setup:
+     -m:setup:
     }
     -c:SecretCodeManager
     >c:SettingsManager{
@@ -31945,7 +31902,7 @@
     >c:ScriptSystem{
      +x:
      -f:CLASS_COMPARATOR
-     -f:scriptEnvironment
+     +f:scriptEnvironment
      +m:affectsGameState:
      +m:dispose:
      +m:getSystemName:

@@ -6,10 +6,13 @@
 
 local logger = C.TLog:forTag("global/fxkw_cmd.lua")
 
-fxkw_cmd.reload_scriptManager = function(a1)
+local prefix = "fxkw"
+
+cmd.reload_script_mngr = function(a1)
     if (a1 == "?") then
         return {
-            descr = "Reboot ScriptManager. Also reloads globalEnvironment"
+            prefix = prefix,
+            descr = "Reboot ScriptManager. Also reloads globalEnvironment",
         }
     end
 

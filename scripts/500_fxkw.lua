@@ -14,8 +14,16 @@ local stagesOrdered = C.Game.i.basicLevelManager.stagesOrdered
 stagesOrdered:pop()
 stagesOrdered:insert(0, stage)]]
 
-_G.fxkw_name = "fxkw"
-
 C.Gdx.graphics:setTitle("I2 Foxkitten Workspace")
+
+function dinext(a, i)
+    i = i+1
+    local v = i <= #a and a[i]
+    if v then return i, v end
+end
+
+function dipairs(a)
+    return dinext, a, 0
+end
 
 logger:i("Done")

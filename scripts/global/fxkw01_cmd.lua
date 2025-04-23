@@ -1,7 +1,7 @@
 --[[
     LUA WHITELIST REQUIREMENTS: 
-    - com.prineside.tdi2.managers.ScriptManager.setup() : void --> WHITELIST
-    - com.prineside.tdi2.Game.scriptManager --> WHITELIST
+    - com.prineside.tdi2.managers.ScriptManager.setup() : void
+    - com.prineside.tdi2.Game.scriptManager
 --]]
 
 local logger = C.TLog:forTag("global/fxkw_cmd.lua")

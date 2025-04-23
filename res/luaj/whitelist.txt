@@ -490,7 +490,6 @@
     +m:clear:
     +m:enqueue:
     +m:get:
-    +m:isEnqueued:
    }
    -c:ReferenceQueue
    -c:SoftReference
@@ -579,7 +578,6 @@
     +m:getDeclaredAnnotation:Class
     +m:getDeclaredAnnotations:
     +m:getDeclaredAnnotationsByType:Class
-    +m:isAccessible:
     +m:isAnnotationPresent:Class
     -m:setAccessible:boolean
    }
@@ -719,7 +717,6 @@
     +m:toString:
    }
    >c:Modifier{
-    +x:
     +f:ABSTRACT
     +f:FINAL
     +f:INTERFACE
@@ -775,7 +772,6 @@
    }
    >c:Proxy{
     -m:getInvocationHandler:Object
-    -m:getProxyClass:ClassLoader,Class[]
     +m:isProxyClass:Class
     -m:newProxyInstance:ClassLoader,Class[],InvocationHandler
    }
@@ -828,8 +824,6 @@
   -c:ArrayStoreException
   -c:AssertionError
   >c:Boolean{
-   +x:String
-   +x:boolean
    +f:FALSE
    +f:TRUE
    +f:TYPE
@@ -852,8 +846,6 @@
   }
   -c:BootstrapMethodError
   >c:Byte{
-   +x:byte
-   +x:String
    +f:BYTES
    +f:MAX_VALUE
    +f:MIN_VALUE
@@ -1222,7 +1214,6 @@
     +m:valueOf:String
     +m:values:
    }
-   +x:char
    +f:BYTES
    +f:COMBINING_SPACING_MARK
    +f:CONNECTOR_PUNCTUATION
@@ -1436,7 +1427,6 @@
    +m:isMemberClass:
    +m:isPrimitive:
    +m:isSynthetic:
-   -m:newInstance:
    +m:toGenericString:
    +m:toString:
   }
@@ -1447,10 +1437,7 @@
   -c:ClassNotFoundException
   -c:ClassValue
   -c:CloneNotSupportedException
-  -c:Compiler
   >c:Double{
-   +x:String
-   +x:double
    +f:BYTES
    +f:MAX_EXPONENT
    +f:MAX_VALUE
@@ -1513,9 +1500,6 @@
   }
   -c:ExceptionInInitializerError
   >c:Float{
-   +x:float
-   +x:String
-   +x:double
    +f:BYTES
    +f:MAX_EXPONENT
    +f:MAX_VALUE
@@ -1569,8 +1553,6 @@
   -c:InstantiationError
   -c:InstantiationException
   >c:Integer{
-   +x:int
-   +x:String
    +f:BYTES
    +f:MAX_VALUE
    +f:MIN_VALUE
@@ -1629,8 +1611,6 @@
   -c:InterruptedException
   -c:LinkageError
   >c:Long{
-   +x:long
-   +x:String
    +f:BYTES
    +f:MAX_VALUE
    +f:MIN_VALUE
@@ -1798,9 +1778,6 @@
    +m:getRuntime:
    -m:addShutdownHook:Thread
    +m:availableProcessors:
-   -m:exec:String
-   -m:exec:String,String[]
-   -m:exec:String,String[],File
    -m:exec:String[]
    -m:exec:String[],String[]
    -m:exec:String[],String[],File
@@ -1812,10 +1789,7 @@
    -m:loadLibrary:String
    +m:maxMemory:
    -m:removeShutdownHook:Thread
-   -m:runFinalization:
    +m:totalMemory:
-   -m:traceInstructions:boolean
-   -m:traceMethodCalls:boolean
   }
   >c:RuntimeException{
    +x:
@@ -1827,8 +1801,6 @@
   -c:SecurityException
   -c:SecurityManager
   >c:Short{
-   +x:short
-   +x:String
    +f:BYTES
    +f:MAX_VALUE
    +f:MIN_VALUE
@@ -2150,7 +2122,6 @@
    -m:getProperties:
    -m:getProperty:String
    -m:getProperty:String,String
-   -m:getSecurityManager:
    -m:getenv:
    -m:getenv:String
    -m:identityHashCode:Object
@@ -2160,13 +2131,11 @@
    -m:loadLibrary:String
    -m:mapLibraryName:String
    +m:nanoTime:
-   -m:runFinalization:
    -m:setErr:PrintStream
    -m:setIn:InputStream
    -m:setOut:PrintStream
    -m:setProperties:Properties
    -m:setProperty:String,String
-   -m:setSecurityManager:SecurityManager
   }
   >c:Thread{
    >c:UncaughtExceptionHandler{
@@ -2206,9 +2175,7 @@
    +m:sleep:long
    +m:sleep:long,int
    +m:yield:
-   -m:checkAccess:
    -m:getContextClassLoader:
-   +m:getId:
    +m:getName:
    +m:getPriority:
    +m:getStackTrace:
@@ -2282,14 +2249,6 @@
    +x:BigInteger,int,MathContext
    +x:char[],int,int,MathContext
    +f:ONE
-   +f:ROUND_CEILING
-   +f:ROUND_DOWN
-   +f:ROUND_FLOOR
-   +f:ROUND_HALF_DOWN
-   +f:ROUND_HALF_EVEN
-   +f:ROUND_HALF_UP
-   +f:ROUND_UNNECESSARY
-   +f:ROUND_UP
    +f:TEN
    +f:ZERO
    +m:valueOf:double
@@ -2305,9 +2264,7 @@
    +m:divide:BigDecimal
    +m:divide:BigDecimal,MathContext
    +m:divide:BigDecimal,RoundingMode
-   +m:divide:BigDecimal,int
    +m:divide:BigDecimal,int,RoundingMode
-   +m:divide:BigDecimal,int,int
    +m:divideAndRemainder:BigDecimal
    +m:divideAndRemainder:BigDecimal,MathContext
    +m:divideToIntegralValue:BigDecimal
@@ -2340,7 +2297,6 @@
    +m:scaleByPowerOfTen:int
    +m:setScale:int
    +m:setScale:int,RoundingMode
-   +m:setScale:int,int
    +m:shortValueExact:
    +m:signum:
    +m:stripTrailingZeros:
@@ -2729,7 +2685,6 @@
      +m:lazySet:boolean
      +m:set:boolean
      +m:toString:
-     +m:weakCompareAndSet:boolean,boolean
     }
     >c:AtomicInteger{
      +x:
@@ -2754,7 +2709,6 @@
      +m:set:int
      +m:toString:
      -m:updateAndGet:IntUnaryOperator
-     +m:weakCompareAndSet:int,int
     }
     -c:AtomicIntegerArray
     -c:AtomicIntegerFieldUpdater
@@ -2855,9 +2809,6 @@
     -m:newSingleThreadScheduledExecutor:ThreadFactory
     -m:newWorkStealingPool:
     -m:newWorkStealingPool:int
-    -m:privilegedCallable:Callable
-    -m:privilegedCallableUsingCurrentClassLoader:Callable
-    -m:privilegedThreadFactory:
     -m:unconfigurableExecutorService:ExecutorService
     -m:unconfigurableScheduledExecutorService:ScheduledExecutorService
    }
@@ -3847,9 +3798,6 @@
    -c:Category
    -c:FilteringMode
    -c:LanguageRange
-   +x:String
-   +x:String,String
-   +x:String,String,String
    +f:CANADA
    +f:CANADA_FRENCH
    +f:CHINA
@@ -5881,7 +5829,15 @@
       -m:supportsExtension:String
      }
      -c:Lwjgl3NativesLoader
-     -c:Lwjgl3Net
+     >c:Lwjgl3Net{
+      -x:Lwjgl3ApplicationConfiguration
+      -m:cancelHttpRequest:HttpRequest
+      -m:newClientSocket:Protocol,String,int,SocketHints
+      -m:newServerSocket:Protocol,String,int,ServerSocketHints
+      -m:newServerSocket:Protocol,int,ServerSocketHints
+      +m:openURI:String
+      -m:sendHttpRequest:HttpRequest,HttpResponseListener
+     }
      -c:Lwjgl3Preferences
      -c:Lwjgl3Window
      -c:Lwjgl3WindowAdapter
@@ -17256,7 +17212,20 @@
     +m:pause:
     +m:resume:
    }
-   -c:Net
+   >c:Net{
+    -c:HttpMethods
+    -c:HttpResponse
+    -c:HttpResponseListener
+    -c:HttpRequest
+    -c:Protocol
+    -z
+    -m:cancelHttpRequest:HttpRequest
+    -m:newClientSocket:Protocol,String,int,SocketHints
+    -m:newServerSocket:Protocol,String,int,ServerSocketHints
+    -m:newServerSocket:Protocol,int,ServerSocketHints
+    +m:openURI:String
+    -m:sendHttpRequest:HttpRequest,HttpResponseListener
+   }
    -c:Preferences
    >c:Screen{
     +z
@@ -17308,7 +17277,7 @@
     +f:gl
     +f:graphics
     +f:input
-    -f:net
+    +f:net
    }
    >c:InputAdapter{
     +x:
@@ -26646,7 +26615,7 @@
      -m:getLuaPackageDefinitions:
      -m:getWhitelist:
      -m:restoreClassTreePath:String,ClassTreeLuaTable
-     -m:setup:
+     +m:setup:
     }
     -c:SecretCodeManager
     >c:SettingsManager{

@@ -1,10 +1,17 @@
+--[[
+    LUA WHITELIST REQUIREMENTS: 
+    - com.badlogic.gdx.Gdx.net
+    - com.badlogic.gdx.Net.openURI(arg0: String) : boolean
+    - com.badlogic.gdx.backends.lwjgl3.Lwjgl3Net.openURI(arg0: String) : boolean
+--]]
+
 local logger = C.TLog:forTag("fxkw_cmd.lua")
 
 local prefix = "fxkw"
 
 cmd.help = function(a1)
     if (a1 == "?") then
-        return { descr = "Show DeveloperConsole help", }
+        return { prefix = prefix, descr = "Show DeveloperConsole help", }
     end
 
     ---@diagnostic disable-next-line: undefined-field
@@ -16,7 +23,7 @@ cmd.help = function(a1)
         local info = v("?")
         local cmdArgs = info and info.args or nil
         local cmdDescr = info and info.descr or nil
-        local cmdPrefix = info and info.prefix or "__INF2"
+        local cmdPrefix = info and info.prefix or "_MAIN_"
         if not cmdArgs then cmdArgs = "" end
         if not cmdDescr then cmdDescr = "description not provided" end
         sorted[cmdPrefix..k] = { prefix = cmdPrefix, cmd = k, args = cmdArgs, descr = cmdDescr}
@@ -25,6 +32,30 @@ cmd.help = function(a1)
     for _, info in utils.pairsByKeys(sorted) do
         logger:i("> [" .. info.prefix .. "] cmd." .. info.cmd .. "[#64B5F6](" .. info.args .. ")\n[#8BC34A]" .. info.descr)
     end
+end
+
+cmd.gdx_javadoc = function(a1)
+    if (a1 == "?") then
+        return {
+            prefix = prefix,
+            descr = "Open LibGDX javadoc in your default browser",
+        }
+    end
+
+    ---@diagnostic disable-next-line: undefined-field
+    C.Gdx.net:openURI("https://javadoc.io/doc/com.badlogicgames.gdx/gdx/" .. com.badlogic.gdx.Version.class.VERSION .. "/index.html");
+end
+
+cmd.jdk8_javadoc = function(a1)
+    if (a1 == "?") then
+        return {
+            prefix = prefix,
+            descr = "Open OpenJDK8 javadoc in your default browser",
+        }
+    end
+
+    ---@diagnostic disable-next-line: undefined-field
+    C.Gdx.net:openURI("https://devdocs.io/openjdk~8/");
 end
 
 logger:i("Done")

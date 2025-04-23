@@ -1,7 +1,7 @@
 --[[
     LUA WHITELIST REQUIREMENTS: 
-    - com.prineside.tdi2.managers.script.ScriptEnvironment.loadScriptsInDir(arg0: String) : void --> WHITELIST
-    - com.prineside.tdi2.systems.ScriptSystem.scriptEnvironment --> WHITELIST
+    - com.prineside.tdi2.managers.script.ScriptEnvironment.loadScriptsInDir(arg0: String) : void
+    - com.prineside.tdi2.systems.ScriptSystem.scriptEnvironment
 --]]
 
 -- Maped Plugins are regular scripts that can be placed

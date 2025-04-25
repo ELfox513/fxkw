@@ -1,7 +1,7 @@
 -- some useful funcs
 
 -- for parse userdata arrays
-function dipairs(aa)
+utils.dipairs = function(aa)
     return function(a, i)
         i = i+1
         local v = i <= #a and a[i]

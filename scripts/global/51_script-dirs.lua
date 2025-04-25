@@ -1,17 +1,18 @@
 --[[
-    LUA WHITELIST REQUIREMENTS: 
+    LUA WHITELIST REQUIREMENTS:
     - com.prineside.tdi2.managers.ScriptManager.setup() : void
-    - com.prineside.tdi2.Game.scriptManager
+    - com.prineside.tdi2.Game.scriptManager : ScriptManager
 --]]
 
-local logger = C.TLog:forTag("global/fxkw_cmd.lua")
+scriptDirs.loadRuntime("/global", true)
 
-local prefix = "fxkw"
+-- [[scriptDirs CMD]]
 
-cmd.reload_script_mngr = function(a1)
+---@diagnostic disable-next-line: duplicate-set-field
+cmd.reload_env = function(a1)
     if (a1 == "?") then
         return {
-            prefix = prefix,
+            pr = "_script-dirs",
             descr = "Reboot ScriptManager. Also reloads globalEnvironment",
         }
     end
@@ -19,5 +20,3 @@ cmd.reload_script_mngr = function(a1)
     ---@diagnostic disable-next-line: undefined-field
     C.Game.i.scriptManager:setup()
 end
-
-logger:i("Done")

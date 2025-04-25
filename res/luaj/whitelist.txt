@@ -19120,7 +19120,56 @@
      +f:SPECIAL_BLUEPRINT_VALUE
     }
    }
-   -p:desktop
+   >p:desktop{
+    -p:luadef
+    -c:DesktopFileChooser
+    >c:DesktopLauncher{
+     >c:ActionResolverDesktop{
+      -x:
+      -m:canShowRewardAd:
+      -m:createPlatformLogger:
+      -m:doubleGainEnabledBySteamGamePurchase:
+      -m:getBestScreenResolution:
+      -m:getClasses:String
+      -m:getDeviceInfo:
+      -m:getFileChooser:
+      -m:getInitConfigManager:
+      -m:getLogFile:
+      -m:getMobilePasswordInput:TextInputListener,String,String,String
+      -m:getPurchaseManager:
+      -m:getSecondsTillCanShowRewardAd:
+      +m:getShortDeviceInfo:
+      -m:getWindowsGraphicsScale:
+      -m:glGetStringi:int,int
+      -m:handleTextFieldFocus:FocusEvent,TextField,boolean
+      -m:hasGoogleAuth:
+      -m:isAppModified:
+      -m:isSignedInWithGoogle:
+      -m:onExit:
+      -m:personalizedAdsEnabled:
+      -m:personalizedAdsSupported:
+      -m:requestGoogleAuth:ObjectConsumer
+      -m:requestSteamAuthTicket:ObjectConsumer
+      -m:rewardAdsAvailable:
+      -m:setFpsLimit:int
+      -m:setPersonalizedAds:boolean
+      -m:showRewardAd:ObjectConsumer,RewardingAdsType
+      -m:signOutGoogle:
+      -m:unlockAchievement:AchievementType
+     }
+     -x:
+     -f:purchaseManager
+     -f:steamApps
+     -f:steamFriends
+     -f:steamUser
+     -f:steamUserStats
+     -f:steamUtils
+     -m:main:String[]
+    }
+    -c:KryoRegistryGenerator
+    -c:LuaDefinitionsGenerator
+    -c:SteamPurchaseManager
+   }
    >p:enemies{
     >p:bosses{
      >c:BrootEnemy{
@@ -37331,7 +37380,7 @@
     -m:getPurchaseManager:
     +m:getScreenSafeAreaInsets:
     -m:getSecondsTillCanShowRewardAd:
-    -m:getShortDeviceInfo:
+    +m:getShortDeviceInfo:
     +m:getWindowsGraphicsScale:
     +m:glGetStringi:int,int
     +m:handleTextFieldFocus:FocusEvent,TextField,boolean

@@ -7,8 +7,6 @@ local logger = C.TLog:forTag("fxkw.lua")
 
 fxkw = {}
 
-dofile("scripts/fxkw/misc.lua")
-
 C.Gdx.graphics:setTitle("I2 Foxkitten Workspace")
 
 logger:i("Done")

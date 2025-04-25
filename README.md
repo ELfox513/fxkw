@@ -2,11 +2,11 @@
 Just my workspace and my archive in Infinitode 2 Modding
 
 ## IMPORTANT Security Notice
-Lua Whitelist restricts the use of some objects and variables of the game to protect players from possible dangerous scripts and maps. This modification _**CHANGES LUA WHITELIST**_ to gain access to the necessary (and unnecessary) parts of the game. What is added to the whitelist, why and in which script it is used is described in **[THIS FILE](WHITELIST_CHANGES.md)**
+Lua Whitelist restricts the use of some objects and variables of the game to protect players from possible dangerous scripts and maps. This modification _**CHANGES LUA WHITELIST**_ to gain access to the necessary (and unnecessary) parts of the game. What is added to the whitelist, why and in which script it is used is described in **[THIS FILE](docs_fxkw/WHITELIST_CHANGES.md)**
 
 ## Content
-The following projects are in mod, current and archival
-* none
+Following projects are in mod:
+* [script-dirs](docs_fxkw/script-dirs.md)
 
 ## How to install
 1. Get [Infinitode 2 from Steam](https://store.steampowered.com/app/937310/Infinitode_2__Infinite_Tower_Defense/) and download it

@@ -1,19 +1,19 @@
-# I2 Foxkitten Workspace
+# Fox Kiwi - Infinitode 2 Mod
 Just my workspace and my archive in Infinitode 2 Modding
 
 ## IMPORTANT Security Notice
-Lua Whitelist restricts the use of some objects and variables of the game to protect players from possible dangerous scripts and maps. This modification _**CHANGES LUA WHITELIST**_ to gain access to the necessary (and unnecessary) parts of the game. What is added to the whitelist, why and in which script it is used is described in **[THIS FILE](docs_fxkw/WHITELIST_CHANGES.md)**
+Lua Whitelist restricts the use of some objects and variables of the game to protect players from possible dangerous scripts and maps. This modification _**CHANGES LUA WHITELIST**_ to gain access to the necessary (and unnecessary) parts of the game. What is added to the whitelist, why and in which script it is used is described in **[THIS FILE](fxkwDocs/WHITELIST_CHANGES.md)**
 
 ## Content
 Following projects are in mod:
-* [script-dirs](docs_fxkw/script-dirs.md)
+* [script-dirs](fxkwDocs/script-dirs.md)
 
 ## How to install
 1. Get [Infinitode 2 from Steam](https://store.steampowered.com/app/937310/Infinitode_2__Infinite_Tower_Defense/) and download it
 2. Go to your Steam Library and right-click on Infinitode 2 in the list. Select "Manage" and then click "Browse local files" to open the folder where the game has been installed
-3. Create an empty folder somewhere (for example, `C:/i2fxkw`) and copy everything from the game's installation folder there
-4. Download this mod. Scroll up to the top and click the green button labeled "Code" then click ["Download Zip"](https://github.com/ELfox513/I2fxkWorkspace/archive/refs/heads/main.zip)
-5. Unzip the contents of the `I2fxkWorkspace-main` folder inside the zip archive into the mod folder. **Agree to replace files at destination**
+3. Create an empty folder somewhere (for example, `C:/fxkw`) and copy everything from the game's installation folder there
+4. Download this mod. Scroll up to the top and click the green button labeled "Code" then click ["Download Zip"](https://github.com/ELfox513/fxkw/archive/refs/heads/main.zip)
+5. Unzip the contents of the `fxkw-main` folder inside the zip archive into the mod folder. **Agree to replace files at destination**
 6. Done! You can run the mod by double-clicking on the `infinitode-2.exe` file
 
 ## Compatibility

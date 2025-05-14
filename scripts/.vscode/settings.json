@@ -1,8 +1,6 @@
 {
     "Lua.diagnostics.globals": [
         "luajava",
-        "dinext",
-        "dipairs",
         "fxkw"
     ]
 }

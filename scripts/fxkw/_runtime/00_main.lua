@@ -7,6 +7,6 @@ local logger = C.TLog:forTag("fxkw.lua")
 
 fxkw = {}
 
-C.Gdx.graphics:setTitle("I2 Foxkitten Workspace")
+C.Gdx.graphics:setTitle("Infinitode 2 Fox Kiwi")
 
 logger:i("Done")

@@ -1,0 +1,7 @@
+wnd = C.Window.new_WS(fxkw.createDefaultWindowStyle())
+tbl = C.Table.new()
+tbl:add():width(200):height(200)
+C.Game.i.uiManager:addWindow(wnd)
+wnd:setContents(tbl)
+wnd:fitToContentSimple()
+wnd:showAtCursor()

@@ -14,6 +14,10 @@ tbl1:add():growX()
 wndTbl:add(tbl1):growX():pad(10):padBottom(0):height(32):row()
 
 tbl2 = C.Table.new()
+
+node = C.Table.new()
+node:add()
+
 wndTbl:add(tbl2):grow():pad(10):row()
 
 tbl3 = C.Table.new()

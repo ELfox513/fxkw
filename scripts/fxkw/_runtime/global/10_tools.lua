@@ -1,11 +1,10 @@
 -- [[scriptDirs CMD]]
 
-cmd.quad_builder = function(a1)
-    if (a1 == "?") then
-        return { pr = fxkw.cmdPrefix, descr = "Shows Quad Builder tool", }
+local quad_viewer_wnd = nil
+cmd.quad_viewer = function(quad)
+    if (quad == "?") then
+        return { pr = fxkw.cmdPrefix, descr = "Shows Quad Viewer tool", }
     end
 
-    dofile("scripts/fxkw/tools/quad-builder.lua")
+    dofile("scripts/fxkw/tools/quad-viewer.lua")(quad)
 end
-
-dofile("scripts/fxkw/tools/quad-builder.lua")

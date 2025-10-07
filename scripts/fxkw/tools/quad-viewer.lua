@@ -2,7 +2,8 @@ local Logger = C.TLog:forTag("fxkw/quad-viewer.lua")
 
 return function(quad)
     local wnd = C.Window.new_WS(fxkw.createDefaultWindowStyle())
-    wnd:setTitle("Quad-"..C.Integer:toHexString(quad:hashCode()))
+    local title = "Quad-"..C.Integer:toHexString(quad:hashCode())
+    wnd:setTitle(title)
     wnd.minHeight = 296
     wnd.minWidth = 256
     local wndTbl = C.Table.new()
@@ -12,6 +13,7 @@ return function(quad)
     tbl:add(img):grow()
     wndTbl:add(tbl):grow():pad(16):row()
 
+    ---@type com.prineside.tdi2.ui.actors.Window_WindowListener
     local wndListener = nil
     wndListener = C.WindowListener({
         -- Every QuadViewer window is unique and one time
@@ -19,10 +21,8 @@ return function(quad)
         closed = function(self) 
             wnd:removeListener(wndListener)
             C.Game.i.uiManager:getWindowsLayer():getTable():removeActor(wnd)
+            Logger:i("%s window destroyed", title)
         end,
-
-        --dragged = function(self) end,
-        --moved = function(self) end,
 
         -- This part exist, because damn game dont want work with any other
         -- scaling mode for quads, then stretch >:
@@ -32,14 +32,18 @@ return function(quad)
 
             if tblXsize > tblYsize then img:setScale(tblYsize/tblXsize, 1)
             else
-                img:setScaleX(1)
                 -- Idk why, but setScale(1, n) dont work properly
                 -- All the pics become neurosongs about casinos
+                img:setScaleX(1)
                 img:setScaleY(tblXsize/tblYsize)
             end
+
+            -- Image origin are not recalculate after manual scaling
             img:setOrigin(C.Align.center)
         end,
 
+        --dragged = function(self) end,
+        --moved = function(self) end,
         --shown = function(self) end
     })
     wnd:addListener(wndListener)
@@ -49,6 +53,7 @@ return function(quad)
     wnd:fitToContentSimple()
     img:setOrigin(C.Align.center) -- Center after fit. Or align will be ignored 
     wnd:showAtCursor()
+    Logger:i("%s window created", title)
 end
 
 

@@ -27,7 +27,7 @@ scriptDirs.load = function(dir)
     scriptDirs.dirs[#scriptDirs.dirs+1] = dir
     logger:i("[#8BC34A]%s [#FFFFFF]added to loadlist", dir)
     ---@diagnostic disable-next-line: undefined-field
-    C.Game.i.scriptManager.global:loadScriptsInDir("scripts/" .. dir .. "/_runtime")
+    C.Game.i.scriptManager.global:loadScriptsInDir("scripts/script-dirs/" .. dir .. "/_runtime")
     scriptDirs.logLoad("/", dir)
 end
 
@@ -35,7 +35,7 @@ scriptDirs.loadRuntime = function(path, isGlobal)
     for _, v in ipairs(scriptDirs.dirs) do
         ---@diagnostic disable-next-line: undefined-field
         local env = isGlobal and C.Game.i.scriptManager.global or S.script.scriptEnvironment
-        env:loadScriptsInDir("scripts/" .. v .. "/_runtime" .. path)
+        env:loadScriptsInDir("scripts/script-dirs/" .. v .. "/_runtime" .. path)
         scriptDirs.logLoad(path, v)
     end
 end

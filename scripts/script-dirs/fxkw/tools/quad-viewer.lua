@@ -1,4 +1,4 @@
-local Logger = C.TLog:forTag("fxkw/quad-viewer.lua")
+local logger = C.TLog:forTag("fxkw/quad-viewer.lua")
 
 return function(quad)
     local wnd = C.Window.new_WS(fxkw.createDefaultWindowStyle())
@@ -21,7 +21,7 @@ return function(quad)
         closed = function(self) 
             wnd:removeListener(wndListener)
             C.Game.i.uiManager:getWindowsLayer():getTable():removeActor(wnd)
-            Logger:i("%s window destroyed", title)
+            logger:i("%s window destroyed", title)
         end,
 
         -- This part exist, because damn game dont want work with any other
@@ -53,7 +53,7 @@ return function(quad)
     wnd:fitToContentSimple()
     img:setOrigin(C.Align.center) -- Center after fit. Or align will be ignored 
     wnd:showAtCursor()
-    Logger:i("%s window created", title)
+    logger:i("%s window created", title)
 end
 
 

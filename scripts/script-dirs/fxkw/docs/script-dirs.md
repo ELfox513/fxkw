@@ -4,7 +4,7 @@ A mechanism for separate and sequential loading of script folders for more conve
 ## IMPORTANT Security Notice
 This mod _**USES MODIFIED LUA WHITELIST**_ to access important parts of the game. All whitelist changes required for mechanism to work are listed [here](#lua-whitelist-modifications).
 
-## Mod features
+## Features
 - [Split loading of script folders](#split-loading-of-script-folders)
 - [Advanced cmd.help()](#advanced-cmdhelp)
 - [New convenient commands for mod development](#new-convenient-commands-for-mod-development)

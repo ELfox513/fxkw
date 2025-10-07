@@ -2,13 +2,13 @@
 A mechanism for separate and sequential loading of script folders for more convenient mod management
 
 ## IMPORTANT Security Notice
-This mod _**USES MODIFIED LUA WHITELIST**_ to access important parts of the game. All whitelist changes required for the mod to work are listed at the end of this .md file.
+This mod _**USES MODIFIED LUA WHITELIST**_ to access important parts of the game. All whitelist changes required for mechanism to work are listed [here](#lua-whitelist-modifications).
 
 ## Mod features
-- Split loading of script folders
-- Advanced cmd.help()
-- New convenient commands for mod development
-- Special copies of "X" functions for each script-dir folder
+- [Split loading of script folders](#split-loading-of-script-folders)
+- [Advanced cmd.help()](#advanced-cmdhelp)
+- [New convenient commands for mod development](#new-convenient-commands-for-mod-development)
+- [Special copies of "X" functions for each script-dir folder](#special-copies-of-dofile-functions-for-each-script-dir-folder)
 
 ## More about the features
 ### Split loading of script folders
@@ -53,10 +53,10 @@ end
 
 When creating your command, be sure to **include the prefix**. Otherwise, the prefix will be set to `_MAIN_`, which is reserved by the game's stock commands. Also, **don't use prefixes starting with `_`** — they are reserved by script-dirs mechanism.
 
-Also was added the output of information about JVM (OS, architecture, JVM version) on which the game is running.
+Also was added the output of information about JVM (OS, CPU arch, JVM version) on which the game is running.
 
 ### New convenient commands for mod development
-- `cmd.help()` - Advanced version of original `cmd.help()`
+- `cmd.help()` - Advanced version of original `cmd.help()`. More details [here](#advanced-cmdhelp).
 - `cmd.gdx_javadoc()` - Opens the Javadoc version of LibGDX that runs this version of the game.
 - `cmd.jdk8_javadoc()` - Opens Java 8 Javadoc. Regardless of the running Java version, the game is oriented towards version 8 for high cross-platform support of Lua VM.
 - `cmd.reload_env()` - Reloads entire Lua environment without having to restart the game or level
@@ -72,7 +72,7 @@ dofile_scriptdir_name("myScript.lua")
 ```
 
 ## How to install script-dirs mechanism
-The script-dirs mechanism is part of fxkw mod. To install fxkw with script-dirs, follow [these](../../../../README.md#how-to-install) instructions. Although this mechanism is designed for use separately from FCW, this installation method is not supported.
+The script-dirs mechanism is part of fxkw mod. To install fxkw with script-dirs, follow [these](../../../../README.md#how-to-install) instructions. While this mechanism is intended to be used separately from fxkw, this installation method is not currently supported.
 
 ## How to install script-dir folders
 Installing script-dir folders is very simple. They come with a one-line launcher script, they usually named like script-dir folder.
@@ -82,11 +82,11 @@ Installing script-dir folders is very simple. They come with a one-line launcher
 
 ## How to convert my mod into script-dir format
 This is also quite simple. Basically, you just need to move your script files to specified folder and create a simple launcher script.
-1. Create your script-dir folder with valid name in the `scripts/script-dirs` folder. The rules for naming scripе-dir folders are identical to the rules for naming variables in Lua.
-2. Organize your scripts, files, and folders according to the script directory architecture. More details are available here.
-3. If you have your own console commands, add prefix to them in the return help table. More details here.
+1. Create your script-dir folder with valid name in the `scripts/script-dirs` folder. The rules for naming scripе-dir folders are identical to the rules for naming variables in Lua. For example, `myMod`
+2. Organize your scripts, files, and folders according to the script directory architecture. More details [here](#split-loading-of-script-folders).
+3. If you have your own console commands, add prefix to them in the return help table. More details [here](#advanced-cmdhelp).
 4. Create script-dir launcher script. It's recommended to name them the same as the script directors. For example, `myMod.lua`
-5. Add call to function in the script: `scriptDirs.load()`. As an argument, specify a string with the name of your script folder
+5. Add call to function in the script: `scriptDirs.load()`. As an argument, specify a string with the name of your script folder. For example:
 ```lua
 scriptDirs.load("myMod")
 ```

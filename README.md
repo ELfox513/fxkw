@@ -6,7 +6,8 @@ Lua Whitelist restricts the use of some objects and variables of the game to pro
 
 ## Content
 Following projects are in mod:
-* [script-dirs](scripts/script-dirs/fxkw/docs/script-dirs.md)
+* Script loader [script-dirs](scripts/script-dirs/fxkw/docs/script-dirs.md)
+* Tool [Quad Viewer](scripts/script-dirs/fxkw/docs/quad-viewer.md)
 
 ## How to install
 1. Get [Infinitode 2 from Steam](https://store.steampowered.com/app/937310/Infinitode_2__Infinite_Tower_Defense/) and download it

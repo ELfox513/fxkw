@@ -5,7 +5,7 @@
 
 local logger = C.TLog:forTag("fxkw.lua")
 
-fxkw = {}
+fxkw = {cmdPrefix = "fxkw"}
 
 C.Gdx.graphics:setTitle("Infinitode 2 Fox Kiwi")
 

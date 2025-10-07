@@ -8,7 +8,7 @@ This mod _**USES MODIFIED LUA WHITELIST**_ to access important parts of the game
 - [Split loading of script folders](#split-loading-of-script-folders)
 - [Advanced cmd.help()](#advanced-cmdhelp)
 - [New convenient commands for mod development](#new-convenient-commands-for-mod-development)
-- [Special copies of "X" functions for each script-dir folder](#special-copies-of-dofile-functions-for-each-script-dir-folder)
+- [Special copies of dofile() functions for each script-dir folder](#special-copies-of-dofile-functions-for-each-script-dir-folder)
 
 ## More about the features
 ### Split loading of script folders

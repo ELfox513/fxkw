@@ -25,6 +25,11 @@ local dirs = {}
 _G.scriptDirs = {}
 
 scriptDirs.load = function(dir)
+    if type(dir) ~= "string" or dir == "" or not dir:match("^[a-zA-Z_][a-zA-Z0-9_]*$") then
+        logger:e("Invalid script-dir name")
+        return
+    end
+
     dirs[#dirs+1] = dir
     logger:i("[#8BC34A]%s [#FFFFFF]added to loadlist", dir)
 
